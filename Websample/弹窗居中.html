@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+		
+		/*	1、首先，界面布局的尺寸采用rem单位。
+
+			2、然后，通过设置根节点（html）的 font-size 的 px 值 来影响 rem 的实际大小。
+
+			3、最后，通过 js 来实时控制font-size 的大小，等比例变换即可。
+			
+			rem是什么？
+				它的全称是 font size of the root element （根元素的字体大小）
+				它是CSS3中新增加的一个尺寸（度量）单位，根节点（html）的font-size决定了rem的尺寸，也就是说它是一个相对单位，相对于(html)。
+
+
+			浏览器的默认字体？
+				浏览器的默认的font-size是16px，1rem默认就等于16px。（chrome最小字体为12px）
+
+
+			rem可以做什么及它的应用场景？
+				用来做web app的屏幕适配，因为不同手机型号的屏幕大小都不同，所以这时候我们就不能用px来做单位，rem是适配不同手机屏幕的一种方案。
+
+			
+			*/
+		
+            /* 整个弹窗组件 */
+            .component_popup {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 100;
+            }
+
+            /* 遮罩背景 */
+            .popup_mask {
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.7);
+            }
+
+            /* 弹窗区域（内容 + close）：严格居中 */
+            .popup_content {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            /* 弹窗的内容部分 */
+            .content_box {
+                width: 15.45rem;
+                height: 19.32rem;
+                background: url(http://img.smyhvae.com/20191010_1500_red-packet.png) no-repeat;
+                background-size: 15.45rem 19.32rem;
+            }
+
+            /* 弹窗的close图标 */
+            .content_close {
+                width: 1.25em;
+                height: 1.25em;
+                background: url(http://img.smyhvae.com/20191010_1500_close.png) no-repeat;
+                background-size: 1.25rem 1.25rem;
+                margin: 0 auto;
+                margin-top: 0.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">默认文档流中的页面主体</div>
+
+        <div class="component_popup">
+            <div class="popup_mask"></div>
+            <div class="popup_content">
+                <div class="content_box"></div>
+                <div class="content_close"></div>
+            </div>
+        </div>
+    </body>
+</html>

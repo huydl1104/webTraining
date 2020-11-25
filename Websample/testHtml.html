@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test html</title>
+	//id 选择器
+	//类选择器、属性选择器、伪类选择器
+	//标签选择器、伪元素选择器
+	<style type="text/css">
+		
+		.header{
+			width: 970px;
+            height: 103px;
+			/*居中*/
+			margin:0 auto;
+		}
+		
+		.header .logo{
+			width: 277px;
+            height: 103px;
+            background-color: red;
+			float:left;
+		}
+		
+		.header .language{
+		    width: 137px;
+            height: 49px;
+            background-color: green;
+            margin-bottom: 8px;
+			float:right;
+		}
+		
+		.header .nav{
+		    width: 679px;
+            height: 46px;
+            background-color: green;
+			float:right;
+		}
+		
+		.content{
+			width: 970px;
+            height: 435px;
+			/*居中*/
+			margin:0 auto;
+			margin-top: 10px;
+		}
+		
+		.content .banner{
+			width: 310px;
+            height: 435px;
+            background-color: gold;
+            margin-right: 10px;
+			float:left;
+		}
+		
+		.content .rightPart{
+		    width: 650px;
+            height: 435px;
+			float:left;
+		}
+		
+		.content .rightPart .main{
+            width: 650px;
+            height: 400px;
+            margin-bottom: 10px;
+        }
+		.content .rightPart .links{
+			width: 650px;
+            height: 25px;
+            background-color: blue;
+		
+		}
+		
+		.content .rightPart .main .news{
+		    float: left;
+            width: 450px;
+            height: 400px;
+		
+		}		
+		.content .rightPart .main .hotPic{
+            float: left;
+            width: 190px;
+            height: 400px;
+            background-color: purple;
+            margin-left: 10px;
+		
+		}
+		
+		.content .rightPart .main .news .new1{
+            width: 450px;
+            height: 240px;
+            background-color: skyblue;
+            margin-bottom: 10px;
+        }
+        .content .rightPart .main .news .new2{
+            width: 450px;
+            height: 110px;
+            background-color: skyblue;
+            margin-bottom: 10px;
+        }
+        .content .rightPart .main .news .new3{
+            width: 450px;
+            height: 30px;
+            background-color: skyblue;
+        }
+		
+		
+		.footer{
+			width: 970px;
+            height: 35px;
+			background-color: pink;
+            /*居中：*/
+            margin: 0 auto;
+            margin-top: 10px;
+		}
+		
+
+		li{
+			float:left;
+			width:100px;
+			height:30px;
+			background-color:red;		
+		}
+
+		.clr{
+			clear:both;
+		}
+		
+		div.three{
+			overflow:hidden;
+			background-color:green;
+		}
+		
+		p{
+		float:left;
+		width:100px;
+		height:40px;
+		background-color:red;
+		
+		}
+		
+	</style>
+</head>
+<body>
+	<!-- 头布局 --->
+	<div class="header">
+		<div class="logo">logo</div>
+		<div class="language">语言</div>
+		<div class="nav">导航条</div>
+	</div>
+	
+	<!-- 中间正文部分 --->
+	<div class="content">
+	
+		<div class="banner">广告部分</div>
+		
+		<div class="rightPart">
+			<div class="main">
+			
+				<div class="news">
+					<div class="new1">新闻1</div>
+					<div class="new2">新闻2</div>
+					<div class="new3">新闻3</div>
+				</div>
+				<div class="hotPic">热点资讯</div>
+			</div>
+
+			<div class="links">外部链接</div>
+		
+		</div>
+	
+	
+	</div>
+
+	<!-- 尾部 --->
+	<div class="footer"></div>	
+	
+	<div class="box11">
+		<ul>
+			<li>内容1</li>
+			<li>内容2</li>
+			<li>内容3</li>
+			<li>内容4</li>
+		</ul>
+		
+	</div>
+	<div class="clr"></div>
+	<div class="box22">
+		<ul>
+			<li>鬼吹灯1</li>
+			<li>鬼吹灯2</li>
+			<li>鬼吹灯3</li>
+			<li>鬼吹灯4</li>
+		</ul>
+		
+	</div>
+	
+	<div class="clr"></div>
+	<div class="three">
+	
+		<p>qqqqqqq</p>
+		<p>wwwwwww</p>
+
+	</div>
+	
+	
+</body>
+</html>

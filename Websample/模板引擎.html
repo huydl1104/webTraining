@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<script src="js/template-web.js"></script>
+	<script id="tpl" type="text/html">
+        <h3><%= className %></h3>
+        <ul>
+            <% for(var i = 0; i< students.length;i++) { %>
+                <li><%= i+1 %>. <%= students[i] %></li>
+            <% } %>
+        </ul>
+
+    </script>
+
+    <script>
+        var data = {
+            className:"王者荣耀",
+            students:["张飞","刘备","诸葛亮","甄姬","小乔","孙尚香"]
+        };
+
+        $(function (){
+            var html = template("tpl",data);
+            $("#demo").html(html);
+        })
+    </script>
+  </head>
+  <body>
+    <div id="demo">
+
+    </div>
+  </body>
+</html>

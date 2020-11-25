@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .wrapper {
+            width: 298px;
+            height: 248px;
+            margin: 100px auto 0;
+            border: 1px solid pink;
+            overflow: hidden;
+        }
+
+        #left, #center, #right {
+            float: left;
+        }
+
+        #left li, #right li {
+            background: url(images/lili.jpg) repeat-x;
+        }
+
+        #left li a, #right li a {
+            display: block;
+            width: 48px;
+            height: 27px;
+            border-bottom: 1px solid pink;
+            line-height: 27px;
+            text-align: center;
+            color: black;
+        }
+
+        #left li a:hover, #right li a:hover {
+            background-image: url(images/abg.gif);
+        }
+
+        #center {
+            border-left: 1px solid pink;
+            border-right: 1px solid pink;
+        }
+    </style>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function () {
+            //需求：鼠标放入两侧的li中，让中间的ul中对应索引值的li显示出来，其他的隐藏。（右侧的li要+9）
+            //左侧先绑。获取绑mouseenter
+            $("#left li").mouseenter(function () {
+                //显示对应索引值的中间的li
+                //alert($(this).index());  获取索引值
+                $("#center li").eq($(this).index()).show().siblings("li").hide();
+            });
+
+            //右侧
+            $("#right li").mouseenter(function () {
+                //显示对应索引值的中间的li
+                //alert($(this).index());  获取索引值
+                $("#center li:eq(" + ($(this).index() + 9) + ")").show().siblings("li").hide();
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    <ul id="left">
+        <li><a href="#">类别1</a></li>
+        <li><a href="#">类别2</a></li>
+        <li><a href="#">类别3</a></li>
+        <li><a href="#">类别4</a></li>
+        <li><a href="#">类别5</a></li>
+        <li><a href="#">类别6</a></li>
+        <li><a href="#">类别7</a></li>
+        <li><a href="#">类别8</a></li>
+        <li><a href="#">类别9</a></li>
+    </ul>
+    <ul id="center">
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+        <li><a href="#"><img src="images/类别1.jpg" alert="图片不存在" width="200" height="250"/></a></li>
+类别1    </ul>
+    <ul id="right">
+        <li><a href="#">类别10</a></li>
+        <li><a href="#">类别11</a></li>
+        <li><a href="#">类别12</a></li>
+        <li><a href="#">类别13</a></li>
+        <li><a href="#">类别14</a></li>
+        <li><a href="#">类别16</a></li>
+        <li><a href="#">类别17</a></li>
+        <li><a href="#">类别18</a></li>
+        <li><a href="#">类别19</a></li>
+    </ul>
+</div>
+</body>
+</html>

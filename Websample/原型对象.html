@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+		function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+			console.log(this);
+            //向对象中添加一个方法
+            this.sayName = function () {
+                console.log("我是" + this.name);
+            }
+        }
+
+        //创建一个Person的实例
+        var per = new Person("小明", 18, "男");
+        //var per2 = new Person("小黑", 28, "男");
+        per.sayName();
+        //per2.sayName();
+
+        //console.log(per.sayName == per2.sayName);  //打印结果为false
+    </script>
+</head>
+<body>
+	
+
+</body>
+</html>

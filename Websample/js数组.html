@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <title></title>
+        <style>
+            div {
+                width: 1210px;
+                margin: 200px auto;
+                color: red;
+                text-align: center;
+                font: 600 30px/30px 'simsun';//bold:加粗; 30px:字体大小; 30px:行高; simsun:字体格式(如宋体、黑体);
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+
+        <script>
+		
+		const obj11 = {
+			name: 'qianguyihao',
+			age: 28,
+			info: {
+				desc: 'hello',
+			},
+		};
+
+		// 浅拷贝：把 obj1 拷贝给 obj2。如果 obj1 只有一层数据，那么，obj1 和 obj2 则互不影响
+		const obj22 = Object.assign({}, obj11);
+		console.log('obj22:' + JSON.stringify(obj22));
+
+		obj11.info.desc = '永不止步'; // 由于 Object.assign() 只是浅拷贝，所以当修改 obj1 的第二层数据时，obj2 对应的值也会被改变。
+		console.log('obj22:' + JSON.stringify(obj22));
+		
+		console.log('--------------------------------- 111'); 
+
+		//利用构造函数自定义对象
+		var stu1 = new Student('smyh');
+		console.log(stu1);
+		stu1.sayHi();
+
+		var stu2 = new Student('vae');
+		console.log(stu2);
+		stu2.sayHi();
+
+
+		// 创建一个构造函数
+		function Student(name) {
+			console.log("student -->"+this);
+			this.name = name; //this指的是当前对象实例【重要】
+			this.sayHi = function () {
+				console.log(this.name + '厉害了');
+			};
+		}
+		
+		console.log('--------------------------------- 222'); 
+		
+		
+		
+		
+		
+		
+		//闭包
+		function fn1() {
+			let a = 20;
+			console.log("闭包 --》"+this);
+			return function () {
+				console.log(a);
+			};
+		}
+
+		const foo1 = fn1(); // 执行 fn1() 之后，会得到一个返回值。这个返回值是函数
+		foo1();
+		
+		
+		
+		function fun() {
+			console.log(this);
+			console.log(this.name);
+		}
+
+		var obj1 = {
+			name: 'smyh',
+			sayName: fun,
+		};
+
+		var obj2 = {
+			name: 'vae',
+			sayName: fun,
+		};
+
+		var name = '全局的name属性';
+
+		//以方法的形式调用，this是调用方法的对象
+		obj2.sayName();
+		
+		console.log('---------------------------------'); 
+		
+		
+		function foo() {
+			var a = b = 100; // 连续赋值
+		}
+
+		foo();
+
+		console.log(window.b); // 在全局范围内访问 b
+		console.log(b); // 在全局范围内访问 b，但是前面没有加 window 这个关键字
+
+		console.log(window.a); // 在全局范围内访问 a
+		//console.log(a); // 在全局范围内访问 a，但是前面没有加 window 这个关键字
+		
+		
+		
+		console.log('---------------------------------'); 
+
+		function fn() {
+			// 外部函数
+			var num = 20;
+
+			function fun() {
+				// 内部函数
+				console.log(num);
+			}
+			fun();
+		}
+		fn();
+		
+		console.log(num);
+		
+		
+		
+		
+		if(true){
+			var num = 123;
+			console.log(num); //123
+		}
+
+		console.log(num); //123（可以正常打印）
+		
+		
+		
+		
+            // 方式一
+			var arr1 = [11, 12, 13];
+
+			// 方式二
+			var arr2 = new Array(); // 参数为空
+			var arr3 = new Array(4); // 参数为一个数值
+			var arr4 = new Array(15, 16, 17); // 参数为多个数值
+
+			console.log(typeof arr1); // 打印结果：object
+		
+			console.log('arr1 = ' + JSON.stringify(arr1));
+			console.log('arr2 = ' + JSON.stringify(arr2));
+			console.log('arr3 = ' + JSON.stringify(arr3));
+			console.log('arr4 = ' + JSON.stringify(arr4));
+			
+			/*
+				JSON.stringify(arr1)：将 JavaScript 对象转换为 JSON 字符串，
+				而JSON.parse()可以将JSON字符串转为一个对象。
+
+			*/
+			
+			
+			/*
+			object
+			js数组.html:30 arr1 = [11,12,13]
+			js数组.html:31 arr2 = []
+			js数组.html:32 arr3 = [null,null,null,null]
+			js数组.html:33 arr4 = [15,16,17]
+			
+			*/
+			
+        </script>
+    </body>
+</html>

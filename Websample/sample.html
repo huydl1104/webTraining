@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+		body{ font-size:14px; font-family : "Microsoft YaHei","SimSun";  height: 8888px;}
+		.header{ height:60px; background-color : #191D3A;}
+		.inner_c{ width:1000px; margin:0 auto;/*居中*/ }
+		.header .logo{ float : left; margin-right : 40px; }
+		.header .nav{ float: left; }
+		.header .nav ul{ list-style:none;}
+		.header .nav ul li{ float:left; width:100px; line-height:60px; border-left:1px solid #252947;}
+		.header .nav ul li.last{ border-right: 1px solid #252947; }	
+		.header .nav ul li a{ display:block;/*为了能够设置宽高，改为块*/ height:60px; text-decoration:none;  color:#818496; text-align: center;  /*让这个div内部的文本居中*/}
+		.header .nav ul li a.current{ color:white; background: #252947;}
+        .header .nav ul li a:hover{ color: white; background: #252947;}
+		.header .jrwm_box{float: left;height: 60px;width: 100px; padding-left: 48px; padding-top: 12px;}
+		/*放背景图片的div*/
+        .header .jrwm_box .jrwm{ height: 34px; background-image: url(images/jrwm.png);background-repeat: no-repeat;text-align: center; /*让这个div内部的超链接居中*/}
+        .header .jrwm_box .jrwm a{
+            display: block; /*将超链接转为块儿，可以保证其霸占父亲的整行*/
+            line-height: 34px; /*让行高为背景图片的高度，可以保证超链接的文字在背景图片里垂直居中*/
+            text-decoration:none; /*去掉超链的下划线*/
+            color: white;
+        }
+		
+		
+		.banner{
+
+            height: 465px;
+            background: url(images/banner_test.png) no-repeat center top;
+        }
+		
+		.content{ padding-top : 50px;}
+		.content .product{ height:229px; border-bottom:1px solid #DBE1E7; margin-left:30px;}
+		.content .product ul{list-style:none;}	
+		.content .product ul li{float:left;width:218px;margin-right:43px; }
+		.content .product ul li.last{margin-right: 0;width: 217px;}
+		.content .product ul li p.image{width: 218px;height: 130px;}
+		.content .product ul li.last img{width: 217px;}
+		.content .product ul li h3{line-height:38px;text-align:center;font-weight:bold;font-size:14px;}
+		.content .product ul li p.djbf{line-height:16px;text-align:center;}
+		.content .product ul li p.djbf a{text-decoration:none; font-size: 12px;color:#38B774;background:url(images/sanjiaoxing.png) no-repeat right 5px; padding-right: 12px;}
+		
+    </style>
+</head>
+<body>
+    <div class="header">
+		<div class="inner_c">
+		
+		    <div class="logo">
+				<image src="images/logo.png" alt="图片显示错误"></image>
+			</div>
+			<div class="nav">
+				<ul>
+					<li><a href="#" class="current">选项1</a></li>
+					<li><a href="#">选项2</a></li>
+					<li><a href="#">选项3</a></li>
+					<li><a href="#">选项4</a></li>
+					<li><a href="#">选项5</a></li>
+					<li class="last"><a href="#">选项6</a></li>
+				</ul>
+			</div>	   
+	   
+			<div class="jrwm_box">
+				<div class="jrwm">
+					<a href="https://www.baidu.com/" target="_blank">欢迎</a>
+				</div>
+	   
+			</div>	
+		
+
+		</div>
+
+    </div>
+	
+	
+	<div class="clr"></div>
+	
+	<div class="banner" ></div>
+	
+	<!-- 内容区域 -->
+	
+	<div class="content">
+		
+		<div class = "product">
+			
+			<ul>
+				<li>
+					<p><image src="images/pro1.png" alt="图片显示错误"></image></p>
+					<h3>测试1</h3>
+					<p class = "djbf"><a href="#" target = "_blank">立即播放</a></p>
+				</li>
+			
+				<li>
+					<p><image src="images/pro2.png" alt="图片显示错误"></image></p>
+					<h3>测试2</h3>
+					<p class = "djbf" ><a href="#" target = "_blank">立即播放</a></p>
+				</li>
+				
+				<li>
+					<p><image src="images/pro1.png" alt="图片显示错误"></image></p>
+					<h3>测试3</h3>
+					<p class = "djbf"><a href="#" target = "_blank">立即播放</a></p>
+				</li>
+				
+				<li class = "last">
+					<p><image src="images/pro2.png" alt="图片显示错误"></image></p>
+					<h3>测试4</h3>
+					<p class = "djbf"><a href="#" target = "_blank">立即播放</a></p>
+				</li>
+			</ul>
+			
+		
+		
+		</div>
+	
+	
+	</div>
+	
+	
+	
+	
+</body>
+</html>

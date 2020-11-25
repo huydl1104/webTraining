@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="https://cdn.bootcdn.net/ajax/libs/decimal.js/10.2.0/decimal.min.js"></script>
+        <script>
+		
+		console.log('---------------------------------');
+		
+		// 方式一：获取 Date 对象的时间戳（最常用的写法）
+		const timestamp1 = +new Date();
+		console.log(timestamp1); // 打印结果举例：1589448165370
+
+		// 方式二：获取 Date 对象的时间戳（较常用的写法）
+		const timestamp2 = new Date().getTime();
+		console.log(timestamp2); // 打印结果举例：1589448165370
+
+		// 方式三：获取 Date 对象的时间戳
+		const timestamp3 = new Date().valueOf();
+		console.log(timestamp3); // 打印结果举例：1589448165370
+
+		// 方式4：获取 Date 对象的时间戳
+		const timestamp4 = new Date() * 1;
+		console.log(timestamp4); // 打印结果举例：1589448165370
+
+		// 方式5：获取 Date 对象的时间戳
+		const timestamp5 = Number(new Date());
+		console.log(timestamp5); // 打印结果举例：1589448165370
+		
+		
+		console.log('---------------------------------');
+
+		/*
+			方法：日期格式化。
+			格式要求：今年是：2020年02月02日 08:57:09 星期日
+		*/
+		function formatDate() {
+			var date = new Date();
+
+			var year = date.getFullYear(); // 年
+			var month = date.getMonth() + 1; // 月
+			var day = date.getDate(); // 日
+
+			var week = date.getDay(); // 星期几
+			var weekArr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+			var hour = date.getHours(); // 时
+			hour = hour < 10 ? '0' + hour : hour; // 如果只有一位，则前面补零
+
+			var minute = date.getMinutes(); // 分
+			minute = minute < 10 ? '0' + minute : minute; // 如果只有一位，则前面补零
+
+			var second = date.getSeconds(); // 秒
+			second = second < 10 ? '0' + second : second; // 如果只有一位，则前面补零
+
+			var result = '今天是：' + year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second + ' ' + weekArr[week];
+
+			return result;
+		}
+
+		formatDate();
+		
+		console.log('--------------------------------------');
+		
+		
+		
+		
+		
+		
+		
+		    // 我在执行这行代码时，当前时间为 2019年2月4日，周一，13:23:52
+			var myDate = new Date();
+
+			console.log(myDate); // 打印结果：Mon Feb 04 2019 13:23:52 GMT+0800 (中国标准时间)
+
+			console.log(myDate.getFullYear()); // 打印结果：2019
+			console.log(myDate.getMonth() + 1); // 打印结果：2
+			console.log(myDate.getDate()); // 打印结果：4
+
+			var dayArr  = ['星期日', '星期一', '星期二', '星期三', '星期四','星期五', '星期六'];
+			console.log(myDate.getDay()); // 打印结果：1
+			console.log(dayArr[myDate.getDay()]); // 打印结果：星期一
+
+			console.log(myDate.getHours()); // 打印结果：13
+			console.log(myDate.getMinutes()); // 打印结果：23
+			console.log(myDate.getSeconds()); // 打印结果：52
+			console.log(myDate.getMilliseconds()); // 打印结果：393
+
+			console.log(myDate.getTime()); // 获取时间戳。打印结果：1549257832393
+		
+			console.log('--------------------------------------');
+		
+		
+		
+		
+		const date11 = new Date('2020/02/17 21:00:00');
+		console.log(date11); // Mon Feb 17 2020 21:00:00 GMT+0800 (中国标准时间)
+
+		const date12 = new Date('2020/04/19'); // 返回的就是四月
+		console.log(date12); // Sun Apr 19 2020 00:00:00 GMT+0800 (中国标准时间)
+
+		const date13 = new Date('2020-05-20');
+		console.log(date13); // Wed May 20 2020 08:00:00 GMT+0800 (中国标准时间)
+
+		const date14 = new Date('Wed Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)');
+		console.log(date14); // Fri Jan 27 2017 12:00:00 GMT+0800 (中国标准时间)
+		
+		console.log('--------------------------------------');
+		
+		
+		var obj1 = {name: '孙悟空'};
+
+		// 复制对象：把 obj1 赋值给 obj3。两者之间互不影响
+		var obj3 = Object.assign({}, obj1);
+		var obj4 = new Object(obj1.name);
+		obj3.name = 'qqqqq';
+		console.log('obj3 -->'+obj3.name+', obj1 -->'+obj1.name);
+		
+		
+		            //创建外层循环，用来控制乘法表的高度
+            for (var i = 1; i <= 9; i++) {
+                //创建一个内层循环来控制图形的宽度
+                for (var j = 1; j <= i; j++) {
+                    document.write('<span>' + j + '*' + i + '=' + i * j + '</span>');
+                }
+
+                //输出一个换行
+                document.write('<br />');
+            }
+		
+		
+		
+		var a = true;
+		a += a;   // 注意这行代码的一元运算符操作
+		console.log('a：' + a);
+		console.log(typeof a);
+
+		console.log('-----------------');
+
+		var b = '18';
+		b = +b;   // 注意这行代码的一元运算符操作
+		console.log('b：' + b);
+		console.log(typeof b);
+		
+		
+		
+		
+            console.log('加法：');
+            var a = 0.1;
+            var b = 0.2;
+            console.log(a + b);
+            console.log(new Decimal(a).add(new Decimal(b)).toNumber());
+
+            console.log('减法：');
+            var a = 1.0;
+            var b = 0.7;
+            console.log(a - b);
+            console.log(new Decimal(a).sub(new Decimal(b)).toNumber());
+
+            console.log('乘法：');
+            var a = 1.01;
+            var b = 1.003;
+            console.log(a * b);
+            console.log(new Decimal(a).mul(new Decimal(b)).toNumber());
+
+            console.log('除法：');
+            var a = 0.029;
+            var b = 10;
+            console.log(a / b);
+            console.log(new Decimal(a).div(new Decimal(b)).toNumber());
+			
+			
+			console.log(typeof []); // 空数组的打印结果：object
+
+			console.log(typeof {}); // 空对象的打印结果：object
+			
+			/*
+			加法：
+			JavaScript加减乘除.html:14 0.30000000000000004
+			JavaScript加减乘除.html:15 0.3
+			减法：
+			JavaScript加减乘除.html:20 0.30000000000000004
+			JavaScript加减乘除.html:21 0.3
+			乘法：
+			JavaScript加减乘除.html:26 1.0130299999999999
+			JavaScript加减乘除.html:27 1.01303
+			除法：
+			JavaScript加减乘除.html:32 0.0029000000000000002
+			JavaScript加减乘除.html:33 0.0029
+			
+			
+			*/
+			
+			
+			
+			
+			
+        </script>
+    </body>
+</html>
